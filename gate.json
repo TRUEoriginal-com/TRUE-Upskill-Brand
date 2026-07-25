@@ -1,0 +1,10 @@
+{
+  "services": {
+    "web": {
+      "type": "frontend",
+      "path": ".",
+      "command": "bunx serve -l tcp://0.0.0.0:3000 .",
+      "framework": "plain"
+    }
+  }
+}

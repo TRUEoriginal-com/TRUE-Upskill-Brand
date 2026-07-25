@@ -1,0 +1,7 @@
+{
+  "name": "true-upskill-brand",
+  "private": true,
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
