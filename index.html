@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>True Upskill - Brand Guideline v0.1</title>
+<title>True Upskill - Brand Guideline v1.0</title>
+<link rel="icon" type="image/png" href="assets/logo-shield-hires.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
+  /* Verified 2026-07-25 against TRUE-Catalog/develop/src/styles/global.css */
   --bg:#eaeff2;
   --bg-white:#ffffff;
   --bg-panel:#dce6ea;
@@ -23,25 +25,30 @@
   --yellow-soft:#f5e78a;
   --signal:#92b8c5;
   --dark:#1e2b34;
+  --shield-navy:#111924;
   --gradient-true:linear-gradient(90deg,#7dcade,#d82a80);
   --font:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;
-  --max:1200px;
+  --max:1360px;
   --pad:32px;
 }
 html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;letter-spacing:-0.005em}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.4;letter-spacing:-0.01em}
 a{color:var(--ink-accent);text-decoration:none;border-bottom:1px solid currentColor}
 a:hover{color:var(--ink)}
+img{max-width:100%;display:block}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:0.86em;background:var(--bg-panel);padding:2px 6px;border-radius:5px;color:var(--ink)}
+pre{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;line-height:1.6;background:var(--dark);color:#dce6ea;padding:20px 24px;border-radius:12px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
 
 /* ---------- NAV ---------- */
 .nav{position:sticky;top:0;z-index:50;background:rgba(234,239,242,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px var(--pad)}
 .nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;color:var(--ink);border:none}
-.brand img{width:36px;height:36px;border-radius:8px;object-fit:cover}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);border:none}
+.brand img{width:32px;height:32px;border-radius:8px;object-fit:cover}
 .brand-wordmark{font-size:18px;font-weight:700;letter-spacing:-0.02em}
-.nav-badge{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);padding:6px 12px;background:var(--yellow);color:var(--ink);border-radius:999px}
-.nav-links{display:flex;gap:24px;align-items:center;font-size:14px}
+.nav-badge{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;padding:6px 12px;background:var(--yellow);color:var(--ink);border-radius:999px}
+.nav-links{display:flex;gap:22px;align-items:center;font-size:14px;flex-wrap:wrap}
 .nav-links a{border:none;color:var(--ink);font-weight:500}
 .nav-links a:hover{color:var(--ink-accent)}
 
@@ -50,9 +57,9 @@ a:hover{color:var(--ink)}
 .hero-inner{max-width:var(--max);margin:0 auto}
 .eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
-.hero h1{font-size:clamp(48px,7vw,88px);font-weight:600;line-height:0.98;letter-spacing:-0.04em;margin-bottom:24px;max-width:900px}
+.hero h1{font-size:clamp(48px,5.5vw,89px);font-weight:600;line-height:0.98;letter-spacing:-0.04em;margin-bottom:24px;max-width:980px}
 .hero h1 .accent{color:var(--ink-accent);background:linear-gradient(180deg,transparent 62%,var(--yellow-soft) 62%);padding:0 0.05em}
-.hero p{font-size:20px;color:var(--ink-soft);max-width:640px;line-height:1.45}
+.hero p{font-size:20px;color:var(--ink-soft);max-width:680px;line-height:1.45}
 .hero-meta{margin-top:32px;font-size:13px;color:var(--muted);display:flex;gap:20px;flex-wrap:wrap}
 .hero-meta strong{color:var(--ink);font-weight:600}
 
@@ -61,60 +68,133 @@ a:hover{color:var(--ink)}
 .section-head{margin-bottom:40px}
 .section-num{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:0.06em;margin-bottom:12px}
 .section-title{font-size:clamp(32px,4vw,48px);font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin-bottom:16px}
-.section-desc{font-size:16px;color:var(--ink-soft);max-width:640px;line-height:1.55}
+.section-desc{font-size:16px;color:var(--ink-soft);max-width:680px;line-height:1.55}
+.section-desc + .section-desc{margin-top:10px}
+.src-note{font-size:12px;color:var(--muted);margin-top:14px}
+.src-note code{font-size:11px}
+
+/* ---------- GENERIC TILES ---------- */
+.tile-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.tile-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tile{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:32px}
+.tile-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:16px}
+.tile h4{font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px}
+.tile p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+.tile p + p{margin-top:8px}
+
+/* ---------- POSITION ---------- */
+.position-facts{list-style:none;margin-top:12px}
+.position-facts li{font-size:14.5px;color:var(--ink-soft);line-height:1.5;padding:7px 0 7px 22px;position:relative}
+.position-facts li::before{content:'';position:absolute;left:0;top:15px;width:10px;height:2px;background:var(--yellow)}
+.position-facts strong{color:var(--ink);font-weight:600}
 
 /* ---------- COLORS ---------- */
 .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .swatch{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s}
 .swatch:hover{border-color:var(--ink)}
-.swatch-chip{height:120px;position:relative}
-.swatch-chip.on-dark{background:var(--dark)}
-.swatch-body{padding:20px}
-.swatch-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
-.swatch-role{font-size:12px;color:var(--muted);margin-bottom:12px}
+.swatch-chip{height:110px;position:relative}
+.swatch-body{padding:18px 20px}
+.swatch-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.swatch-role{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.4}
 .swatch-hex{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--ink-soft);letter-spacing:0.02em}
 
 /* ---------- TYPOGRAPHY ---------- */
 .type-row{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:16px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
-.type-meta{font-size:12px;color:var(--muted);letter-spacing:-0.005em;min-width:180px}
+.type-meta{font-size:12px;color:var(--muted);letter-spacing:-0.005em;min-width:210px;line-height:1.6}
 .type-meta strong{display:block;color:var(--ink);font-size:13px;font-weight:600;margin-bottom:4px}
-.type-sample{color:var(--ink)}
-.type-h1{font-size:72px;line-height:0.98;letter-spacing:-0.04em;font-weight:600}
-.type-h2{font-size:48px;line-height:1;letter-spacing:-0.035em;font-weight:600}
-.type-h3{font-size:32px;line-height:1.1;letter-spacing:-0.025em;font-weight:600}
+.type-meta code{font-size:11px}
+.type-sample{color:var(--ink);min-width:0}
+.type-h1{font-size:clamp(40px,5vw,72px);line-height:0.98;letter-spacing:-0.04em;font-weight:600}
+.type-h2{font-size:clamp(34px,3.5vw,52px);line-height:0.98;letter-spacing:-0.035em;font-weight:600}
+.type-h3{font-size:28px;line-height:1.1;letter-spacing:-0.03em;font-weight:600}
+.type-h3-sm{font-size:22px;line-height:1.1;letter-spacing:-0.025em;font-weight:600;color:var(--ink-soft);margin-top:6px}
 .type-lead{font-size:24px;line-height:1.35;letter-spacing:-0.015em;font-weight:400;color:var(--ink-soft)}
-.type-body{font-size:16px;line-height:1.55;font-weight:400}
-.type-meta-lbl{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted)}
+.type-body{font-size:17px;line-height:1.55;letter-spacing:-0.005em;font-weight:400;max-width:640px}
+.type-meta-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
 .accent-demo{color:var(--ink-accent);background:linear-gradient(180deg,transparent 62%,var(--yellow-soft) 62%);padding:0 0.05em}
 
-/* ---------- LOGO SHOWCASE ---------- */
+/* ---------- LOGO ---------- */
 .logos{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .logo-tile{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
 .logo-tile.dark{background:var(--dark)}
+.logo-tile.cream{background:var(--bg-cream)}
 .logo-tile.dark .logo-label{color:rgba(255,255,255,0.5)}
-.logo-tile img{width:120px;height:120px;object-fit:cover;border-radius:20px}
-.logo-tile .logo-lockup{display:flex;align-items:center;gap:16px}
-.logo-tile .logo-lockup img{width:56px;height:56px;border-radius:12px}
-.logo-tile .logo-lockup .wm{font-size:28px;font-weight:700;letter-spacing:-0.02em}
-.logo-tile.dark .logo-lockup .wm{color:var(--bg-white)}
-.logo-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-top:8px}
+.logo-tile > img{width:120px;height:120px;object-fit:cover;border-radius:26px}
+.logo-lockup{display:flex;align-items:center;gap:10px}
+.logo-lockup img{width:32px;height:32px;border-radius:8px;object-fit:cover}
+.logo-lockup .wm{font-size:18px;font-weight:700;letter-spacing:-0.02em}
+.logo-lockup-lg{gap:16px}
+.logo-lockup-lg img{width:56px;height:56px;border-radius:14px}
+.logo-lockup-lg .wm{font-size:28px}
+.logo-tile.dark .wm{color:var(--bg-white)}
+.logo-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-top:8px;text-align:center;line-height:1.6}
+.logo-rules{margin-top:24px}
+
+/* ---------- SPEC TABLE ---------- */
+.spec-table{width:100%;border-collapse:collapse;background:var(--bg-white);border:1px solid var(--border);border-radius:16px;overflow:hidden;font-size:14px}
+.spec-wrap{border:1px solid var(--border);border-radius:16px;overflow:hidden;overflow-x:auto;background:var(--bg-white)}
+.spec-wrap table{width:100%;border-collapse:collapse;font-size:14px}
+.spec-wrap th{text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);padding:14px 20px;border-bottom:1px solid var(--border);background:var(--bg-white)}
+.spec-wrap td{padding:12px 20px;border-bottom:1px solid var(--border);color:var(--ink-soft);vertical-align:top}
+.spec-wrap tr:last-child td{border-bottom:none}
+.spec-wrap td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+.spec-wrap td code{white-space:nowrap}
+
+/* ---------- RADIUS ---------- */
+.radius-row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end}
+.radius-demo{background:var(--bg-white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;width:120px;height:96px;font-size:12px;color:var(--ink-soft)}
+.radius-demo strong{font-size:14px;color:var(--ink)}
+
+/* ---------- SHADOW / MOTION ---------- */
+.shadow-demo{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:24px;font-size:13px;color:var(--ink-soft);display:flex;flex-direction:column;gap:6px}
+.shadow-demo code{font-size:11px;background:transparent;padding:0;color:var(--muted)}
+.lift-demo{transition:all 0.18s;cursor:default}
+.lift-demo:hover{border-color:var(--ink);transform:translateY(-2px)}
 
 /* ---------- COMPONENTS ---------- */
 .components{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .comp-tile{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .comp-tile-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted)}
+.comp-spec{font-size:12px;color:var(--muted);line-height:1.6}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:-0.005em;transition:all .18s;cursor:pointer;border:none;line-height:1;text-decoration:none}
+.btn-lg{padding:16px 28px;font-size:14px}
 .btn-primary{background:var(--ink);color:var(--bg-white)}
 .btn-primary:hover{background:var(--ink-accent)}
 .btn-yellow{background:var(--yellow);color:var(--ink)}
 .btn-yellow:hover{background:var(--ink);color:var(--yellow)}
 .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:var(--yellow)}
-.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--yellow);padding:5px 10px 4px;border-radius:999px}
 .eyebrow-demo{display:flex;align-items:center;gap:10px}
 .eyebrow-demo .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
 .eyebrow-demo span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
+.search-demo{display:flex;align-items:center;background:var(--bg-white);border:1px solid var(--border);border-radius:999px;padding:6px 6px 6px 24px;box-shadow:0 4px 24px rgba(38,51,61,0.06);width:100%;max-width:480px}
+.search-demo input{flex:1;border:none;outline:none;background:transparent;font-family:var(--font);font-size:15px;padding:14px 0;color:var(--ink);min-width:0}
+.search-demo input::placeholder{color:var(--muted)}
+.stat-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg-white);border:1px solid var(--border);border-radius:999px;padding:7px 16px;font-size:14px}
+.stat-pill strong{font-weight:700;color:var(--ink)}
+.stat-pill span{color:var(--muted)}
+.section-link-demo{font-size:13px;font-weight:600;letter-spacing:-0.005em;color:var(--ink);white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border:1px solid var(--ink);border-radius:999px;transition:all .18s;text-decoration:none}
+.section-link-demo:hover{background:var(--ink);color:var(--bg-white)}
+.card-demo{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:24px;transition:all .18s;width:100%}
+.card-demo:hover{border-color:var(--ink);transform:translateY(-2px)}
+.card-demo h5{font-size:16px;font-weight:600;letter-spacing:-0.02em;margin-bottom:6px}
+.card-demo p{font-size:13px;color:var(--muted);line-height:1.5}
+.cat-demo{position:relative;overflow:hidden;border-radius:20px;padding:28px 24px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;background-color:var(--ink-accent);isolation:isolate;width:100%;transition:transform .18s}
+.cat-demo::before{content:'';position:absolute;inset:0;background:linear-gradient(155deg,rgba(61,100,120,0.72) 0%,rgba(38,51,61,0.92) 100%);z-index:1}
+.cat-demo > *{position:relative;z-index:2}
+.cat-demo:hover{transform:translateY(-2px)}
+.cat-demo-top{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.55);font-weight:600}
+.cat-demo-title{font-size:22px;font-weight:600;line-height:1.1;letter-spacing:-0.025em}
+.cat-demo-meta{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.6)}
+.cat-demo-meta strong{color:#fff}
+.marquee-demo{background:var(--ink);color:var(--bg-white);padding:20px 0;overflow:hidden;white-space:nowrap;border-radius:16px}
+.marquee-track{display:inline-flex;gap:64px;font-size:14px;font-weight:500;letter-spacing:-0.005em;animation:scroll 40s linear infinite}
+.marquee-item{display:inline-flex;align-items:center;gap:16px}
+.marquee-item::after{content:'';display:inline-block;width:6px;height:6px;background:var(--signal);border-radius:50%;margin-left:64px}
+.marquee-item strong{color:var(--signal);font-weight:600}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- VOICE ---------- */
 .voice{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -126,9 +206,17 @@ a:hover{color:var(--ink)}
 .voice-tile h4{font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:8px}
 .voice-tile p{font-size:15px;color:var(--ink-soft);line-height:1.5;margin-bottom:8px}
 .voice-tile ul{list-style:none;padding:0;margin-top:12px}
-.voice-tile li{font-size:14px;color:var(--ink-soft);padding:6px 0;padding-left:20px;position:relative}
+.voice-tile li{font-size:14px;color:var(--ink-soft);padding:6px 0;padding-left:20px;position:relative;line-height:1.5}
 .voice-tile li::before{content:'';position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--muted)}
 .voice-tile.do li::before{background:var(--yellow)}
+.voice-tile li em{font-style:normal;color:var(--muted);font-size:12.5px}
+
+/* ---------- DARK PANEL (footer spec demo) ---------- */
+.dark-panel{background:var(--dark);border-radius:20px;padding:48px 40px;color:var(--bg-white)}
+.dark-panel .footer-headline-demo{font-size:clamp(32px,4vw,56px);font-weight:600;line-height:0.98;letter-spacing:-0.035em;margin-bottom:16px}
+.dark-panel .footer-headline-demo .accent{color:var(--yellow)}
+.dark-panel p{font-size:15px;line-height:1.5;color:rgba(255,255,255,0.65);max-width:520px}
+.dark-panel .legal{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:rgba(255,255,255,0.4)}
 
 /* ---------- FOOTER ---------- */
 .footer{background:var(--dark);color:var(--bg-white);padding:64px var(--pad) 32px;margin-top:80px}
@@ -139,16 +227,19 @@ a:hover{color:var(--ink)}
 .footer-links a{color:var(--bg-white);font-size:14px;border:none;font-weight:500}
 .footer-links a:hover{color:var(--yellow)}
 .footer-bottom{padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:rgba(255,255,255,0.5);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.powered-by{color:var(--bg-white);border:none;padding-bottom:2px;position:relative;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em}
-.powered-by::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--gradient-true);border-radius:2px}
+.footer-bottom a{color:rgba(255,255,255,0.7);border:none}
+.footer-bottom a:hover{color:var(--yellow)}
 
 @media (max-width:900px){
-  .swatches,.logos,.components,.voice{grid-template-columns:1fr}
+  .swatches{grid-template-columns:repeat(2,1fr)}
+  .logos,.components,.voice,.tile-grid,.tile-grid-3{grid-template-columns:1fr}
   .type-row{grid-template-columns:1fr;gap:16px}
   .type-meta{min-width:0}
-  .type-h1{font-size:48px}
-  .type-h2{font-size:36px}
   .nav-links{display:none}
+}
+@media (max-width:640px){
+  :root{--pad:20px}
+  .swatches{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -157,140 +248,299 @@ a:hover{color:var(--ink)}
 <!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/claw-true-klara/trueupskill-home.html" class="brand">
-      <img src="LOGO_PLACEHOLDER" alt="True Upskill">
+    <a href="#top" class="brand">
+      <img src="assets/logo-shield-hires.png" alt="True Upskill">
       <span class="brand-wordmark">True Upskill</span>
-      <span class="nav-badge">Brand v0.1</span>
+      <span class="nav-badge">Brand v1.0</span>
     </a>
     <div class="nav-links">
-      <a href="#colors">Colors</a>
-      <a href="#typography">Typography</a>
+      <a href="#position">Position</a>
       <a href="#logo">Logo</a>
+      <a href="#colors">Color</a>
+      <a href="#typography">Type</a>
+      <a href="#layout">Layout</a>
+      <a href="#radius">Radius</a>
+      <a href="#motion">Motion</a>
       <a href="#components">Components</a>
+      <a href="#language">Language</a>
       <a href="#voice">Voice</a>
-      <a href="https://mockup.gate1.dev/claw-true-klara/trueupskill-home.html">See it live →</a>
+      <a href="https://trueupskill.com" target="_blank" rel="noopener">trueupskill.com →</a>
     </div>
   </div>
 </nav>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span><span>Brand guideline · v0.1 · draft</span></div>
+    <div class="eyebrow"><span class="dot"></span><span>Brand guideline · v1.0 · reconciled against the live site</span></div>
     <h1>The look, sound, and feel of <span class="accent">True Upskill.</span></h1>
-    <p>A sibling to TRUE Original with its own voice. This page is the single source for colors, type, logo use, and tone until v1.0 lands.</p>
+    <p>True Upskill is its own brand on its own domain. This page is the single written source for its colors, type, logo use, components, and tone. Where this page and the live site ever disagree, the site at trueupskill.com is correct and this page gets updated. Never the other way round.</p>
     <div class="hero-meta">
       <span>Owner: <strong>Patrik</strong></span>
-      <span>Updated: <strong>2026-07-01</strong></span>
-      <span>Status: <strong>Draft for review</strong></span>
+      <span>Updated: <strong>2026-07-25</strong></span>
+      <span>Status: <strong>v1.0 · reconciled</strong></span>
+      <span>Sources: <strong>trueupskill.com + TRUE-Catalog global.css</strong></span>
     </div>
   </div>
 </section>
 
-<!-- ============ COLORS ============ -->
-<section class="section" id="colors">
+<!-- ============ 01 POSITION ============ -->
+<section class="section" id="position">
   <div class="container">
     <div class="section-head">
-      <div class="section-num">01 · Colors</div>
-      <h2 class="section-title">Soft dusty blues, one yellow.</h2>
-      <p class="section-desc">The palette leads with soft blue-white and near-black text. Yellow is the accent - used sparingly on badges, dots, CTAs, and as a highlighter behind key words in headlines. Never as body text.</p>
+      <div class="section-num">01 · Brand position</div>
+      <h2 class="section-title">A standalone brand. Not a TRUE product.</h2>
+      <p class="section-desc">True Upskill is a course catalog where every course ends in a credential that can be verified at the source. It lives at trueupskill.com and carries its own name, mark, typeface, and palette.</p>
     </div>
-    <div class="swatches">
-      <div class="swatch"><div class="swatch-chip" style="background:#eaeff2"></div><div class="swatch-body"><div class="swatch-name">Blue-white</div><div class="swatch-role">Primary background</div><div class="swatch-hex">#EAEFF2</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#ffffff;border-bottom:1px solid #cfd9de"></div><div class="swatch-body"><div class="swatch-name">White</div><div class="swatch-role">Cards, surfaces</div><div class="swatch-hex">#FFFFFF</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#dce6ea"></div><div class="swatch-body"><div class="swatch-name">Dusty blue</div><div class="swatch-role">Alt sections</div><div class="swatch-hex">#DCE6EA</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#f0ebe1"></div><div class="swatch-body"><div class="swatch-name">Warm cream</div><div class="swatch-role">Accent surfaces</div><div class="swatch-hex">#F0EBE1</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#26333d"></div><div class="swatch-body"><div class="swatch-name">Ink</div><div class="swatch-role">Primary text</div><div class="swatch-hex">#26333D</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#4a5763"></div><div class="swatch-body"><div class="swatch-name">Ink soft</div><div class="swatch-role">Body/lead text</div><div class="swatch-hex">#4A5763</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#3d6478"></div><div class="swatch-body"><div class="swatch-name">Ink accent</div><div class="swatch-role">Highlighted words</div><div class="swatch-hex">#3D6478</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#7a8791"></div><div class="swatch-body"><div class="swatch-name">Muted</div><div class="swatch-role">Metadata</div><div class="swatch-hex">#7A8791</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#f0d84d"></div><div class="swatch-body"><div class="swatch-name">Yellow</div><div class="swatch-role">Accent (badges, dots, CTA)</div><div class="swatch-hex">#F0D84D</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#f5e78a"></div><div class="swatch-body"><div class="swatch-name">Yellow soft</div><div class="swatch-role">Highlighter background</div><div class="swatch-hex">#F5E78A</div></div></div>
-      <div class="swatch"><div class="swatch-chip on-dark" style="position:relative"><span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#92b8c5;font-weight:600;font-size:16px;letter-spacing:-0.005em">Signal on dark</span></div><div class="swatch-body"><div class="swatch-name">Signal</div><div class="swatch-role">Accent on dark backgrounds</div><div class="swatch-hex">#92B8C5</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#cfd9de"></div><div class="swatch-body"><div class="swatch-name">Border</div><div class="swatch-role">Dividers, card outlines</div><div class="swatch-hex">#CFD9DE</div></div></div>
-      <div class="swatch"><div class="swatch-chip" style="background:#1e2b34"></div><div class="swatch-body"><div class="swatch-name">Dark</div><div class="swatch-role">Footer, marquee</div><div class="swatch-hex">#1E2B34</div></div></div>
+    <div class="tile-grid">
+      <div class="tile">
+        <div class="tile-lbl">What it is</div>
+        <ul class="position-facts">
+          <li>Its own consumer brand at <strong>trueupskill.com</strong>, with its own guideline (this page).</li>
+          <li>The wordmark is <strong>True Upskill</strong>, in exactly that casing. Writing it as TRUE Upskill is wrong. This casing is a deliberate decision by Patrik.</li>
+          <li>Swedish first: the site defaults to Swedish, English lives at <strong>/en</strong>.</li>
+          <li>The verification technology behind the credentials comes from TRUE. That relationship stays in the background of the product, it does not appear in the brand surface.</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <div class="tile-lbl">What it is not</div>
+        <ul class="position-facts">
+          <li>Not a sibling of TRUE Sign, Vault, Verify, or Profile. It is not part of that product family or its navigation.</li>
+          <li>Not set in Marcellus or Helvetica Neue. Those belong to TRUE Original. Upskill is Inter Tight, everything.</li>
+          <li>The mark is not the TRUE gem. It is Upskill's own shield in a rounded tile.</li>
+          <li>The TRUE style guide at style.true.gate1.dev does not govern this brand.</li>
+        </ul>
+      </div>
     </div>
+    <p class="src-note">Rule of precedence, set by Patrik 2026-07-25: the live site sets the rules. Values on this page were read from <code>TRUE-Catalog/develop/src/styles/global.css</code> and from the HTML that trueupskill.com actually ships.</p>
   </div>
 </section>
 
-<!-- ============ TYPOGRAPHY ============ -->
-<section class="section" id="typography">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-num">02 · Typography</div>
-      <h2 class="section-title">Inter Tight. Everything.</h2>
-      <p class="section-desc">One font, one family. Editorial modern grotesk with tight tracking. Distinct from TRUE Original (Marcellus serif + Helvetica Neue) - Upskill leads with sans-serif confidence. No italic for emphasis - use color + yellow highlighter background instead.</p>
-    </div>
-
-    <div class="type-row">
-      <div class="type-meta"><strong>Hero H1</strong>60-88px · weight 600<br>line-height 0.98 · tracking -0.04em</div>
-      <div class="type-sample"><div class="type-h1">Learn today. Prove it <span class="accent-demo">forever.</span></div></div>
-    </div>
-    <div class="type-row">
-      <div class="type-meta"><strong>Section H2</strong>40-56px · weight 600<br>line-height 0.98 · tracking -0.035em</div>
-      <div class="type-sample"><div class="type-h2">Three promises. <span class="accent-demo">Nothing more.</span></div></div>
-    </div>
-    <div class="type-row">
-      <div class="type-meta"><strong>Card H3</strong>24-32px · weight 600<br>line-height 1.1 · tracking -0.025em</div>
-      <div class="type-sample"><div class="type-h3">Every course ends with proof.</div></div>
-    </div>
-    <div class="type-row">
-      <div class="type-meta"><strong>Lead</strong>20-28px · weight 400<br>line-height 1.35 · tracking -0.015em</div>
-      <div class="type-sample"><div class="type-lead">Find courses from trusted educators. Walk away with credentials you can verify at the source.</div></div>
-    </div>
-    <div class="type-row">
-      <div class="type-meta"><strong>Body</strong>15-17px · weight 400<br>line-height 1.55 · tracking -0.005em</div>
-      <div class="type-sample"><div class="type-body">You don't just finish. You walk away with a credential that lives on the educator's own domain — and that any employer can verify at the source, forever.</div></div>
-    </div>
-    <div class="type-row">
-      <div class="type-meta"><strong>Eyebrow / meta</strong>11-13px · weight 500-600<br>tracking 0.12-0.14em uppercase</div>
-      <div class="type-sample"><div class="type-meta-lbl">01 · Handpicked this month</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LOGO ============ -->
+<!-- ============ 02 LOGO ============ -->
 <section class="section" id="logo">
   <div class="container">
     <div class="section-head">
-      <div class="section-num">03 · Logo</div>
+      <div class="section-num">02 · Logo</div>
       <h2 class="section-title">Shield mark + wordmark.</h2>
-      <p class="section-desc">Exact original file, high resolution. White outlined shield with T over U on deep navy ground. Do not recolor, redraw, or reproportion. Always paired with the wordmark "True Upskill" (not "TRUE Upskill").</p>
+      <p class="section-desc">The mark is a white outlined shield forming a T over a U, on a deep navy ground (#111924). It is a raster original: the exact file, never a redrawing. In product it is always rendered as a rounded tile, with corner radius applied in code.</p>
     </div>
     <div class="logos">
       <div class="logo-tile">
-        <img src="LOGO_PLACEHOLDER" alt="True Upskill shield">
-        <div class="logo-label">Shield mark · 120px</div>
+        <img src="assets/logo-shield-hires.png" alt="True Upskill shield mark">
+        <div class="logo-label">Shield mark · logo-shield-hires.png · 1024 × 1024</div>
       </div>
       <div class="logo-tile dark">
-        <img src="LOGO_PLACEHOLDER" alt="True Upskill shield">
-        <div class="logo-label">On dark background</div>
+        <img src="assets/logo-shield-hires.png" alt="True Upskill shield mark on dark">
+        <div class="logo-label">On dark · the navy ground reads on both light and dark</div>
       </div>
       <div class="logo-tile">
         <div class="logo-lockup">
-          <img src="LOGO_PLACEHOLDER" alt="">
+          <img src="assets/logo-shield-hires.png" alt="">
           <span class="wm">True Upskill</span>
         </div>
-        <div class="logo-label">Horizontal lockup · light</div>
+        <div class="logo-label">Nav lockup, as shipped · mark 32px, radius 8px, gap 10px, wordmark 18px / 700</div>
       </div>
       <div class="logo-tile dark">
-        <div class="logo-lockup">
-          <img src="LOGO_PLACEHOLDER" alt="">
+        <div class="logo-lockup logo-lockup-lg">
+          <img src="assets/logo-shield-hires.png" alt="">
           <span class="wm">True Upskill</span>
         </div>
-        <div class="logo-label">Horizontal lockup · dark</div>
+        <div class="logo-label">Lockup scaled up · radius stays at 25% of the mark's size</div>
+      </div>
+      <div class="logo-tile cream">
+        <img src="assets/logo-shield-invert.png" alt="True Upskill shield, ink on cream" style="width:150px;height:120px;object-fit:contain;border-radius:0">
+        <div class="logo-label">Invert version · logo-shield-invert.png · ink strokes on cream (#F2ECE0)</div>
+      </div>
+      <div class="logo-tile">
+        <div class="logo-lockup">
+          <img src="assets/logo-shield-hires.png" alt="" style="width:16px;height:16px;border-radius:4px">
+          <img src="assets/logo-shield-hires.png" alt="" style="width:32px;height:32px;border-radius:8px">
+          <img src="assets/logo-shield-hires.png" alt="" style="width:48px;height:48px;border-radius:12px">
+        </div>
+        <div class="logo-label">Favicon sizes · 16 / 32 / 180 px PNG on the live site</div>
       </div>
     </div>
+    <div class="logo-rules tile-grid" style="margin-top:24px">
+      <div class="tile">
+        <div class="tile-lbl">Hard rules</div>
+        <ul class="position-facts">
+          <li><strong>Use the actual file.</strong> The repo rule on the mark, verbatim intent: do not recreate it as an inline SVG or redraw the paths. That produced the wrong mark before.</li>
+          <li>Do not recolor, mirror, crop into the strokes, or change the shield's proportions.</li>
+          <li>Always pair with the wordmark <strong>True Upskill</strong> where space allows. The mark may stand alone at favicon sizes.</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <div class="tile-lbl">In practice</div>
+        <ul class="position-facts">
+          <li>Nav and footer render the mark at <strong>32 × 32 px with 8 px radius</strong> and <code>object-fit: cover</code>. Keep the radius at 25% of the rendered size when scaling.</li>
+          <li>Wordmark: Inter Tight <strong>700</strong>, tracking <code>-0.02em</code>. 18 px in the nav, 24 px in the footer.</li>
+          <li>Clear space has no formal spec in the code. Recommendation until one exists: keep at least half the mark's width free on all sides, and never crowd the lockup's 10 px gap.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="src-note">Source: <code>TRUE-Catalog/develop/src/components/Brand.astro</code>, <code>public/assets/logo-shield-hires.png</code> (shipped on trueupskill.com), <code>public/assets/logo-shield-invert.png</code>, favicon links in <code>src/layouts/Base.astro</code>. Ground navy #111924 sampled from the file itself.</p>
   </div>
 </section>
 
-<!-- ============ COMPONENTS ============ -->
+<!-- ============ 03 COLORS ============ -->
+<section class="section" id="colors">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">03 · Color</div>
+      <h2 class="section-title">Soft dusty blues, one yellow.</h2>
+      <p class="section-desc">The palette leads with soft blue white surfaces and near black ink. Yellow is the single accent: badges, dots, CTAs, and the highlighter behind key words. Never body text. On dark surfaces the accent shifts to Signal, a dusty light blue.</p>
+      <p class="section-desc">All fourteen tokens below were verified unchanged against the live code on 2026-07-25.</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-chip" style="background:#eaeff2"></div><div class="swatch-body"><div class="swatch-name">Blue white · <code>--bg</code></div><div class="swatch-role">Primary background</div><div class="swatch-hex">#EAEFF2</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#ffffff;border-bottom:1px solid #cfd9de"></div><div class="swatch-body"><div class="swatch-name">White · <code>--bg-white</code></div><div class="swatch-role">Cards, surfaces</div><div class="swatch-hex">#FFFFFF</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#dce6ea"></div><div class="swatch-body"><div class="swatch-name">Dusty blue · <code>--bg-panel</code></div><div class="swatch-role">Alt sections, panels</div><div class="swatch-hex">#DCE6EA</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#f0ebe1"></div><div class="swatch-body"><div class="swatch-name">Warm cream · <code>--bg-cream</code></div><div class="swatch-role">Accent surfaces (testimonials)</div><div class="swatch-hex">#F0EBE1</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#26333d"></div><div class="swatch-body"><div class="swatch-name">Ink · <code>--ink</code></div><div class="swatch-role">Primary text, primary buttons</div><div class="swatch-hex">#26333D</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#4a5763"></div><div class="swatch-body"><div class="swatch-name">Ink soft · <code>--ink-soft</code></div><div class="swatch-role">Body and lead text</div><div class="swatch-hex">#4A5763</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#3d6478"></div><div class="swatch-body"><div class="swatch-name">Ink accent · <code>--ink-accent</code></div><div class="swatch-role">Highlighted words, hovers, links</div><div class="swatch-hex">#3D6478</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#7a8791"></div><div class="swatch-body"><div class="swatch-name">Muted · <code>--muted</code></div><div class="swatch-role">Metadata, eyebrows</div><div class="swatch-hex">#7A8791</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#f0d84d"></div><div class="swatch-body"><div class="swatch-name">Yellow · <code>--yellow</code></div><div class="swatch-role">Accent: badges, dots, CTA</div><div class="swatch-hex">#F0D84D</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#f5e78a"></div><div class="swatch-body"><div class="swatch-name">Yellow soft · <code>--yellow-soft</code></div><div class="swatch-role">Highlighter background</div><div class="swatch-hex">#F5E78A</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#1e2b34;position:relative"><span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#92b8c5;font-weight:600;font-size:16px">Signal on dark</span></div><div class="swatch-body"><div class="swatch-name">Signal · <code>--signal</code></div><div class="swatch-role">Accent on dark backgrounds only</div><div class="swatch-hex">#92B8C5</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#cfd9de"></div><div class="swatch-body"><div class="swatch-name">Border · <code>--border</code></div><div class="swatch-role">Dividers, card outlines</div><div class="swatch-hex">#CFD9DE</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#1e2b34"></div><div class="swatch-body"><div class="swatch-name">Dark · <code>--dark</code></div><div class="swatch-role">Footer, marquee ground</div><div class="swatch-hex">#1E2B34</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:linear-gradient(90deg,#7dcade,#d82a80)"></div><div class="swatch-body"><div class="swatch-name">TRUE gradient · <code>--gradient-true</code></div><div class="swatch-role">Reserved for TRUE attribution only. Never in Upskill UI. Currently unused on live pages.</div><div class="swatch-hex">#7DCADE → #D82A80</div></div></div>
+    </div>
+    <p class="src-note">Source: <code>:root</code> tokens in <code>TRUE-Catalog/develop/src/styles/global.css</code>.</p>
+  </div>
+</section>
+
+<!-- ============ 04 TYPOGRAPHY ============ -->
+<section class="section" id="typography">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">04 · Typography</div>
+      <h2 class="section-title">Inter Tight. Everything.</h2>
+      <p class="section-desc">One family for every word. An editorial modern grotesk with tight tracking, loaded from Google Fonts in weights 400, 500, 600, and 700. Distinct on purpose from TRUE Original's Marcellus and Helvetica Neue. No italics for emphasis: use ink accent color plus the yellow highlighter instead.</p>
+      <p class="section-desc">Base: 16 px root, body line height 1.4, body tracking <code>-0.01em</code>.</p>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta"><strong>Hero H1</strong><code>clamp(48px, 5.5vw, 89px)</code><br>weight 600 · line height 0.98<br>tracking -0.04em</div>
+      <div class="type-sample"><div class="type-h1">Learn today. Prove it <span class="accent-demo">forever.</span></div></div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Section H2</strong><code>clamp(40px, 5.5vw, 72px)</code><br>weight 600 · line height 0.98<br>tracking -0.035em</div>
+      <div class="type-sample"><div class="type-h2">Three promises. <span class="accent-demo">Nothing more.</span></div></div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Card H3</strong>22 to 28px · weight 600<br>line height 1.1<br>tracking -0.03em to -0.025em</div>
+      <div class="type-sample"><div class="type-h3">Every course ends with proof.</div><div class="type-h3-sm">Category card title at 22px.</div></div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Lead</strong><code>clamp(18px, 2vw, 24px)</code><br>weight 400 · line height 1.35<br>tracking -0.015em</div>
+      <div class="type-sample"><div class="type-lead">Find courses from trusted educators. Walk away with credentials you can verify at the source.</div></div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Body</strong>14 to 17px · weight 400<br>line height 1.5 to 1.55<br>tracking -0.005em</div>
+      <div class="type-sample"><div class="type-body">You don't just finish. You walk away with a credential that lives on the educator's own domain, one that any employer can verify at the source, forever.</div></div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Eyebrow / meta</strong>11px · weight 600 · uppercase<br>tracking 0.14em<br>badges: 10px · 700 · 0.12em</div>
+      <div class="type-sample"><div class="type-meta-lbl">01 · Handpicked this month</div></div>
+    </div>
+
+    <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;
+
+--font: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;</code></pre>
+    <p class="src-note">Source: font link in <code>src/layouts/Base.astro</code> and on trueupskill.com. Scale values from <code>.hero h1</code>, <code>.section-title</code>, <code>.pillar h3</code>, <code>.cat-title</code>, <code>.hero-sub</code>, <code>.section-desc</code>, <code>.eyebrow</code>, and <code>.badge</code> in <code>global.css</code>. The v0.1 draft overstated several sizes; these are the shipped values.</p>
+  </div>
+</section>
+
+<!-- ============ 05 LAYOUT ============ -->
+<section class="section" id="layout">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">05 · Layout &amp; spacing</div>
+      <h2 class="section-title">One container, a calm rhythm.</h2>
+      <p class="section-desc">Content sits in a 1360 px container with 32 px side padding. Sections breathe: 120 px of vertical padding on desktop, stepping down on smaller screens. The v0.1 draft said 1200 px; the site ships 1360.</p>
+    </div>
+    <div class="spec-wrap">
+      <table>
+        <tr><th>Token</th><th>Value</th><th>Notes</th></tr>
+        <tr><td><code>--max</code></td><td>1360px</td><td>Container max width, everywhere</td></tr>
+        <tr><td><code>--pad</code></td><td>32px · 20px at ≤640px</td><td>Horizontal page padding</td></tr>
+        <tr><td>Section padding</td><td>120px · 80px at ≤1024px · 72px at ≤640px</td><td>Vertical rhythm between sections</td></tr>
+        <tr><td>Hero padding</td><td>80px top and bottom · 56px top at ≤640px</td><td></td></tr>
+        <tr><td>Card grid gaps</td><td>16 to 20px</td><td>Category cards 16px, providers and courses 18 to 20px</td></tr>
+        <tr><td>Breakpoints</td><td>1024px · 640px · 480px</td><td>Grids step 4 → 2 → 1 columns</td></tr>
+      </table>
+    </div>
+    <p class="src-note">Source: <code>:root</code>, <code>.section</code>, <code>.hero</code>, and the media queries in <code>global.css</code>, including the comment that fixes the container at 1360 and calls out 1200 as the old guideline's own layout width.</p>
+  </div>
+</section>
+
+<!-- ============ 06 RADIUS ============ -->
+<section class="section" id="radius">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">06 · Radius</div>
+      <h2 class="section-title">Pills for actions, soft tiles for content.</h2>
+      <p class="section-desc">Buttons, badges, tags, and search fields are full pills at 999 px. Content surfaces are rounded tiles between 12 and 24 px. The v0.1 claim that every element is pill rounded was wrong: cards never are.</p>
+    </div>
+    <div class="radius-row">
+      <div class="radius-demo" style="border-radius:999px"><strong>999px</strong><span>buttons, pills</span></div>
+      <div class="radius-demo" style="border-radius:24px"><strong>24px</strong><span>hero visual</span></div>
+      <div class="radius-demo" style="border-radius:20px"><strong>20px</strong><span>cards</span></div>
+      <div class="radius-demo" style="border-radius:18px"><strong>18px</strong><span>course cards</span></div>
+      <div class="radius-demo" style="border-radius:16px"><strong>16px</strong><span>panels, dropdowns</span></div>
+      <div class="radius-demo" style="border-radius:14px"><strong>14px</strong><span>avatars</span></div>
+      <div class="radius-demo" style="border-radius:12px"><strong>12px</strong><span>small avatars, menus</span></div>
+      <div class="radius-demo" style="border-radius:8px"><strong>8px</strong><span>logo tile, selects</span></div>
+    </div>
+    <p class="src-note">Source: every <code>border-radius</code> declaration in <code>global.css</code>. Most frequent values: 999px (21 uses), 20px (15), 16px (7), 24px (7), 12px (10).</p>
+  </div>
+</section>
+
+<!-- ============ 07 SHADOW & MOTION ============ -->
+<section class="section" id="motion">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">07 · Shadow &amp; motion</div>
+      <h2 class="section-title">Barely there, always quick.</h2>
+      <p class="section-desc">Shadows are soft, blue tinted, and rare: resting cards have none, only floating elements and the search pill carry one. Motion is fast and small: most transitions run 0.15 to 0.18 seconds, and hover lifts cards exactly 2 px.</p>
+    </div>
+    <div class="tile-grid-3">
+      <div class="shadow-demo" style="box-shadow:0 4px 24px rgba(38,51,61,0.06)">
+        <strong>Search pill / hero</strong>
+        <code>0 4px 24px rgba(38,51,61,0.06)</code>
+      </div>
+      <div class="shadow-demo" style="box-shadow:0 8px 32px rgba(38,51,61,0.08)">
+        <strong>Hover, floating cards</strong>
+        <code>0 8px 32px rgba(38,51,61,0.08)</code>
+      </div>
+      <div class="shadow-demo" style="box-shadow:0 12px 40px rgba(30,43,52,0.14)">
+        <strong>Dropdown panels</strong>
+        <code>0 12px 40px rgba(30,43,52,0.14)</code>
+      </div>
+    </div>
+    <div class="tile-grid" style="margin-top:24px">
+      <div class="tile lift-demo">
+        <div class="tile-lbl">Hover me · the standard card hover</div>
+        <p>Border turns ink, the card lifts 2 px: <code>border-color: var(--ink)</code> + <code>transform: translateY(-2px)</code> over <code>all 0.18s</code>.</p>
+      </div>
+      <div class="tile">
+        <div class="tile-lbl">Timing</div>
+        <p>Hovers and color changes: <strong>0.15s</strong>. Cards and buttons: <strong>0.18s</strong>. Dropdown reveal: <strong>0.18s</strong> with a 6 px slide. Marquee loop: <strong>40s</strong> linear. Nothing bounces, nothing eases longer than 0.3s.</p>
+      </div>
+    </div>
+    <p class="src-note">Source: <code>box-shadow</code> and <code>transition</code> declarations in <code>global.css</code>.</p>
+  </div>
+</section>
+
+<!-- ============ 08 COMPONENTS ============ -->
 <section class="section" id="components">
   <div class="container">
     <div class="section-head">
-      <div class="section-num">04 · Components</div>
-      <h2 class="section-title">Buttons, badges, eyebrows.</h2>
-      <p class="section-desc">Minimal set. Every element pill-rounded (999px). Yellow reserved for primary "action" cues.</p>
+      <div class="section-num">08 · Components</div>
+      <h2 class="section-title">The working set.</h2>
+      <p class="section-desc">Every component below is live: hover them. They are rebuilt here from the exact CSS the site ships.</p>
     </div>
     <div class="components">
       <div class="comp-tile">
@@ -299,42 +549,144 @@ a:hover{color:var(--ink)}
           <a class="btn btn-primary">Primary →</a>
           <a class="btn btn-yellow">Yellow (search) →</a>
           <a class="btn btn-ghost">Ghost →</a>
+          <a class="btn btn-lg btn-primary">Large →</a>
         </div>
+        <span class="comp-spec">Pill 999px · 13px/600, padding 11×20 · large: 14px, padding 16×28. Primary hovers to ink accent. Yellow and ghost hover invert to ink with yellow text.</span>
       </div>
       <div class="comp-tile">
-        <span class="comp-tile-lbl">Badge (yellow pill)</span>
+        <span class="comp-tile-lbl">Badge &amp; eyebrow</span>
         <span class="badge">Verified educator</span>
-      </div>
-      <div class="comp-tile">
-        <span class="comp-tile-lbl">Eyebrow with dot</span>
         <div class="eyebrow-demo"><span class="dot"></span><span>01 · Browse by field</span></div>
+        <span class="comp-spec">Badge: yellow pill, 10px/700, uppercase, 0.12em. Eyebrow: 11px/600, uppercase, 0.14em, with an 8px yellow dot.</span>
       </div>
       <div class="comp-tile">
-        <span class="comp-tile-lbl">Highlighter (accent)</span>
-        <div style="font-size:32px;font-weight:600;letter-spacing:-0.025em">Kurser <span class="accent-demo">worth your time.</span></div>
+        <span class="comp-tile-lbl">Highlighter accent</span>
+        <div style="font-size:32px;font-weight:600;letter-spacing:-0.025em">Courses <span class="accent-demo">worth your time.</span></div>
+        <span class="comp-spec">Ink accent text over a yellow soft underlay: <code>linear-gradient(180deg, transparent 62%, var(--yellow-soft) 62%)</code>. On dark grounds the text goes white over <code>rgba(240,216,77,0.35)</code>.</span>
+      </div>
+      <div class="comp-tile">
+        <span class="comp-tile-lbl">Search pill</span>
+        <div class="search-demo"><input type="text" placeholder="What do you want to learn?"><a class="btn btn-yellow">Search →</a></div>
+        <span class="comp-spec">White pill, border, soft shadow, yellow CTA inside. The signature hero element.</span>
+      </div>
+      <div class="comp-tile">
+        <span class="comp-tile-lbl">Stat pills</span>
+        <div class="btn-row">
+          <span class="stat-pill"><strong>10 000+</strong><span>kurser</span></span>
+          <span class="stat-pill"><strong>200+</strong><span>utbildare</span></span>
+          <span class="stat-pill"><strong>400 000+</strong><span>intyg</span></span>
+        </div>
+        <span class="comp-spec">White pill, 14px, bold number + muted label. Used in page heroes.</span>
+      </div>
+      <div class="comp-tile">
+        <span class="comp-tile-lbl">Section link</span>
+        <a class="section-link-demo">Alla kurser →</a>
+        <span class="comp-spec">Outlined pill, 13px/600, fills ink on hover. Sits at the right edge of section heads.</span>
+      </div>
+      <div class="comp-tile">
+        <span class="comp-tile-lbl">Card</span>
+        <div class="card-demo">
+          <h5>Standard card</h5>
+          <p>White, 1px border, radius 20px (course cards 18px). Hover: ink border, 2px lift.</p>
+        </div>
+        <span class="comp-spec"></span>
+      </div>
+      <div class="comp-tile">
+        <span class="comp-tile-lbl">Category card</span>
+        <div class="cat-demo">
+          <div class="cat-demo-top"><span>01</span><span>↗</span></div>
+          <div class="cat-demo-title">AI &amp; Maskininlärning</div>
+          <div class="cat-demo-meta"><span><strong>241</strong> kurser</span><span><strong>12</strong> utbildare</span></div>
+        </div>
+        <span class="comp-spec">Photo background under a fixed teal to ink gradient: <code>linear-gradient(155deg, rgba(61,100,120,0.72), rgba(38,51,61,0.92))</code>, lightening on hover. White text always.</span>
       </div>
     </div>
+    <div style="margin-top:24px">
+      <span class="comp-tile-lbl" style="display:block;margin-bottom:12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted)">Marquee · dark strip, 40s loop, Signal accents</span>
+      <div class="marquee-demo">
+        <div class="marquee-track">
+          <span class="marquee-item"><strong>10 000+</strong> verifierade kurser</span>
+          <span class="marquee-item"><strong>200+</strong> betrodda utbildare</span>
+          <span class="marquee-item"><strong>400 000+</strong> utfärdade intyg</span>
+          <span class="marquee-item"><strong>Varje intyg</strong> verifierbart vid källan</span>
+          <span class="marquee-item"><strong>10 000+</strong> verifierade kurser</span>
+          <span class="marquee-item"><strong>200+</strong> betrodda utbildare</span>
+          <span class="marquee-item"><strong>400 000+</strong> utfärdade intyg</span>
+          <span class="marquee-item"><strong>Varje intyg</strong> verifierbart vid källan</span>
+        </div>
+      </div>
+    </div>
+    <p class="src-note">Source: <code>.btn</code>, <code>.badge</code>, <code>.eyebrow</code>, <code>.hero-search</code>, <code>.cat-hero-stat</code>, <code>.section-link</code>, <code>.card</code>, <code>.cat</code>, and <code>.marquee</code> in <code>global.css</code>. Marquee copy and numbers are the live site's own.</p>
   </div>
 </section>
 
-<!-- ============ VOICE ============ -->
+<!-- ============ 09 NAV & FOOTER ============ -->
+<section class="section" id="chrome">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">09 · Navigation &amp; footer</div>
+      <h2 class="section-title">Light head, dark foot.</h2>
+      <p class="section-desc">The nav is sticky and translucent: the page background at 92% opacity behind a 20 px blur, with a 1 px border below. The footer is the one large dark surface, ink dark with a huge headline and a yellow accent word.</p>
+    </div>
+    <div class="tile-grid">
+      <div class="tile">
+        <div class="tile-lbl">Navigation spec</div>
+        <ul class="position-facts">
+          <li>Sticky, <code>rgba(234,239,242,0.92)</code> + <code>backdrop-filter: blur(20px)</code>, bottom border.</li>
+          <li>Lockup left. Links 14px/500. A ghost pill button on the right.</li>
+          <li>Categories open a two column dropdown panel: white, radius 16px, soft shadow.</li>
+          <li>Language switcher: outlined pill with a globe, dropdown menu radius 12px.</li>
+        </ul>
+      </div>
+      <div class="dark-panel">
+        <div class="footer-headline-demo">Är du <span class="accent">utbildare?</span></div>
+        <p>Footer headline at clamp(40px, 6vw, 72px), weight 600, with the accent word in yellow. Below it: a five column link grid, then the legal line.</p>
+        <div class="legal">Verifierade kurser du kan lita på. · © 2026 · Allmänna villkor</div>
+      </div>
+    </div>
+    <p class="src-note">Source: <code>.nav</code> and <code>.footer</code> in <code>global.css</code>, <code>Footer.astro</code>, and the shipped homepage. Note: the live footer carries no Powered by TRUE strip. The only TRUE attribution on the live site is a quiet text link on the 404 page.</p>
+  </div>
+</section>
+
+<!-- ============ 10 LANGUAGE ============ -->
+<section class="section" id="language">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">10 · Language</div>
+      <h2 class="section-title">Swedish first. English at /en.</h2>
+      <p class="section-desc">The site ships Swedish as the default language on the root domain and English under /en, declared with hreflang. Anything written for True Upskill exists in both, and the Swedish version is the primary one.</p>
+    </div>
+    <div class="spec-wrap">
+      <table>
+        <tr><th>Surface</th><th>Swedish (default)</th><th>English (/en)</th></tr>
+        <tr><td>Hero H1</td><td>Lär dig idag. Bevisa det för alltid.</td><td>Learn today. Prove it forever.</td></tr>
+        <tr><td>Title tag</td><td>True Upskill - Verifierade kurser från ledande utbildare</td><td>True Upskill - Verified courses from leading providers</td></tr>
+        <tr><td>Footer ask</td><td>Är du utbildare?</td><td>Are you a training provider?</td></tr>
+        <tr><td>Legal line</td><td>Verifierade kurser du kan lita på.</td><td>Verified courses you can trust.</td></tr>
+      </table>
+    </div>
+    <p class="src-note">Source: <code>&lt;html lang="sv"&gt;</code>, hreflang tags, and page copy fetched from trueupskill.com and trueupskill.com/en on 2026-07-25.</p>
+  </div>
+</section>
+
+<!-- ============ 11 VOICE ============ -->
 <section class="section" id="voice">
   <div class="container">
     <div class="section-head">
-      <div class="section-num">05 · Voice &amp; tone</div>
+      <div class="section-num">11 · Voice &amp; tone</div>
       <h2 class="section-title">Curated. Concrete. Never hype.</h2>
-      <p class="section-desc">Upskill speaks to the learner, not the educator. Confident but never loud. Everything must be provable - if we say "verified" we mean it can be verified.</p>
+      <p class="section-desc">Upskill speaks to the learner, not the educator. Confident but never loud. Everything must be provable: if we say verified, it can be verified. The real numbers, from the site itself: 10 000+ verified courses, 200+ trusted educators, 400 000+ credentials issued.</p>
     </div>
     <div class="voice">
       <div class="voice-tile do">
-        <div class="voice-lbl do-lbl">Do</div>
+        <div class="voice-lbl do-lbl">Do · all lines below ship on the live site</div>
         <h4>Say what it is.</h4>
         <p>Concrete over abstract. Course names, educator names, real numbers.</p>
         <ul>
-          <li>"Learn today. Prove it forever."</li>
-          <li>"Every course ends with proof."</li>
-          <li>"200+ trusted educators. 8,400+ courses."</li>
-          <li>"Courses worth your time."</li>
+          <li>"Lär dig idag. Bevisa det för alltid." <em>· "Learn today. Prove it forever."</em></li>
+          <li>"Riktiga människor. Äkta diplom." <em>· "Real people. Authentic diplomas."</em></li>
+          <li>"Tre löften." <em>· "Three promises."</em></li>
+          <li>"200+ betrodda utbildare. 10 000+ verifierade kurser."</li>
         </ul>
       </div>
       <div class="voice-tile dont">
@@ -355,18 +707,20 @@ a:hover{color:var(--ink)}
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-title">Brand system, v0.1 - <span class="accent">still shaping.</span></div>
+    <div class="footer-title">Brand system, v1.0 · <span class="accent">reconciled.</span></div>
     <div class="footer-links">
-      <a href="#colors">Colors</a>
-      <a href="#typography">Typography</a>
+      <a href="#position">Position</a>
       <a href="#logo">Logo</a>
+      <a href="#colors">Color</a>
+      <a href="#typography">Typography</a>
+      <a href="#layout">Layout</a>
       <a href="#components">Components</a>
       <a href="#voice">Voice</a>
-      <a href="https://mockup.gate1.dev/claw-true-klara/trueupskill-home.html">Home mockup</a>
+      <a href="https://trueupskill.com" target="_blank" rel="noopener">trueupskill.com</a>
     </div>
     <div class="footer-bottom">
-      <span>Draft for review · Patrik + Klara · 2026-07-01</span>
-      <a href="https://trueoriginal.com" class="powered-by" target="_blank">Powered by TRUE</a>
+      <span>v1.0 · Reconciled against trueupskill.com · Patrik + Klara · 2026-07-25</span>
+      <span>The site sets the rules. If this page and trueupskill.com disagree, the site is right.</span>
     </div>
   </div>
 </footer>
