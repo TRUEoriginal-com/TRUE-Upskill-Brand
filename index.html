@@ -372,13 +372,31 @@ pre code{background:none;padding:0;color:inherit}
       <div class="tile">
         <div class="tile-lbl">In practice</div>
         <ul class="position-facts">
-          <li>Nav and footer render the mark at <strong>32 × 32 px with 8 px radius</strong> and <code>object-fit: cover</code>. Keep the radius at 25% of the rendered size when scaling.</li>
-          <li>Wordmark: Inter Tight <strong>700</strong>, tracking <code>-0.02em</code>. 18 px in the nav, 24 px in the footer.</li>
+          <li>Nav renders the mark at <strong>32 × 32 px with 8 px radius</strong>, the footer at <strong>44 × 44 px with 10 px radius</strong>, both with <code>object-fit: cover</code>. Radius sits at roughly a quarter of the rendered size; keep that ratio when scaling.</li>
+          <li>Wordmark: Inter Tight <strong>700</strong>, tracking <code>-0.02em</code>. 18 px in the nav, 24 px in the footer. Full values in the table below.</li>
           <li>Clear space has no formal spec in the code. Recommendation until one exists: keep at least half the mark's width free on all sides, and never crowd the lockup's 10 px gap.</li>
         </ul>
       </div>
     </div>
-    <p class="src-note">Source: <code>TRUE-Catalog/develop/src/components/Brand.astro</code>, <code>public/assets/logo-shield-hires.png</code> (shipped on trueupskill.com), <code>public/assets/logo-shield-invert.png</code>, favicon links in <code>src/layouts/Base.astro</code>. Ground navy #111924 sampled from the file itself.</p>
+    <h3 class="type-h3-sm" style="margin-top:40px">Wordmark, exact values</h3>
+    <p class="section-desc" style="margin-top:8px">The wordmark is live text, not an image file. It is set in the site's own typeface, so it inherits every future type change automatically. Do not export it as a PNG or SVG and do not typeset it in any other family.</p>
+    <div class="spec-wrap" style="margin-top:16px">
+      <table>
+        <tr><th>Property</th><th>Nav</th><th>Footer</th></tr>
+        <tr><td>Text</td><td colspan="2">True Upskill, one space, both words capitalised</td></tr>
+        <tr><td>Font family</td><td colspan="2"><code>'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif</code></td></tr>
+        <tr><td>Weights loaded</td><td colspan="2">400, 500, 600, 700 from Google Fonts, <code>display=swap</code></td></tr>
+        <tr><td>Font size</td><td>18px</td><td>24px</td></tr>
+        <tr><td>Font weight</td><td>700</td><td>700</td></tr>
+        <tr><td>Letter spacing</td><td><code>-0.02em</code></td><td><code>-0.02em</code></td></tr>
+        <tr><td>Line height</td><td>1</td><td>1</td></tr>
+        <tr><td>Colour</td><td><code>#26333d</code> (<code>--ink</code>)</td><td><code>#ffffff</code> (<code>--bg-white</code>)</td></tr>
+        <tr><td>Wrapping</td><td><code>white-space: nowrap</code></td><td>inherits, never break the two words</td></tr>
+        <tr><td>Mark size</td><td>32 × 32px, radius 8px</td><td>44 × 44px, radius 10px</td></tr>
+        <tr><td>Gap, mark to text</td><td>10px</td><td>12px</td></tr>
+      </table>
+    </div>
+    <p class="src-note">Source: <code>TRUE-Catalog/develop/src/components/Brand.astro</code>, <code>src/styles/partials/_nav.scss</code>, <code>src/styles/partials/_tokens.scss</code>, <code>public/assets/logo-shield-hires.png</code> (shipped on trueupskill.com), <code>public/assets/logo-shield-invert.png</code>, favicon links in <code>src/layouts/Base.astro</code>. Ground navy #111924 sampled from the file itself. Every value in the wordmark table re-measured against the production stylesheet on trueupskill.com, 8 August 2026.</p>
   </div>
 </section>
 
